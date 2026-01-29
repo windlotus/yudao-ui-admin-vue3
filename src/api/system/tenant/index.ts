@@ -12,6 +12,7 @@ export interface TenantVO {
   password: string
   expireTime: Date
   accountCount: number
+  maxDeviceLimit: number
   createTime: Date
 }
 

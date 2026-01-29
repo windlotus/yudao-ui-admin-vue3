@@ -45,6 +45,14 @@
           placeholder="请输入账号额度"
         />
       </el-form-item>
+      <el-form-item label="最大设备数" prop="maxDeviceLimit">
+        <el-input-number
+          v-model="formData.maxDeviceLimit"
+          :min="1"
+          controls-position="right"
+          placeholder="请输入最大设备数"
+        />
+      </el-form-item>
       <el-form-item label="过期时间" prop="expireTime">
         <el-date-picker
           v-model="formData.expireTime"
@@ -96,6 +104,7 @@ const formData = ref({
   contactName: undefined,
   contactMobile: undefined,
   accountCount: undefined,
+  maxDeviceLimit: undefined,
   expireTime: undefined,
   website: undefined,
   status: CommonStatusEnum.ENABLE,
@@ -109,6 +118,7 @@ const formRules = reactive({
   contactName: [{ required: true, message: '联系人不能为空', trigger: 'blur' }],
   status: [{ required: true, message: '租户状态不能为空', trigger: 'blur' }],
   accountCount: [{ required: true, message: '账号额度不能为空', trigger: 'blur' }],
+  maxDeviceLimit: [{ required: true, message: '最大设备数不能为空', trigger: 'blur' }],
   expireTime: [{ required: true, message: '过期时间不能为空', trigger: 'blur' }],
   website: [{ required: true, message: '绑定域名不能为空', trigger: 'blur' }],
   username: [{ required: true, message: '用户名称不能为空', trigger: 'blur' }],
@@ -172,6 +182,7 @@ const resetForm = () => {
     contactName: undefined,
     contactMobile: undefined,
     accountCount: undefined,
+    maxDeviceLimit: undefined,
     expireTime: undefined,
     website: undefined,
     status: CommonStatusEnum.ENABLE,

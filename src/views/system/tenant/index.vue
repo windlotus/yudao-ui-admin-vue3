@@ -118,6 +118,11 @@
           <el-tag>{{ scope.row.accountCount }}</el-tag>
         </template>
       </el-table-column>
+      <el-table-column label="最大设备数" align="center" prop="maxDeviceLimit">
+        <template #default="scope">
+          <el-tag type="success">{{ scope.row.maxDeviceLimit }}</el-tag>
+        </template>
+      </el-table-column>
       <el-table-column
         label="过期时间"
         align="center"
